@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DesafioMB</string>
+    <string name="hintName">Nome Completo</string>
+    <string name="hintEmail">E-mail</string>
+    <string name="hintCpf">CPF</string>
+    <string name="hintPhone">Telefone</string>
+    <string name="hintPassword">Senha</string>
+    <string name="txtConta">Ainda não tem uma conta? Então toque aqui</string>
+    <string name="txtReenviarCod">Não recebeu o codigo? clique aqui!</string>
+</resources>
