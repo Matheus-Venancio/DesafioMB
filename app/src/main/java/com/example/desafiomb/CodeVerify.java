@@ -22,14 +22,15 @@ public class CodeVerify extends AppCompatActivity {
     private TextView txtResend;
     private Button btnConfirm;
 
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-    String num = "";
-    String phone = "";
-
     StringBuilder numRev = new StringBuilder();
 
-    String[] permissoes ={Manifest.permission.SEND_SMS,Manifest.permission.RECEIVE_SMS};
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
+//    String num = "";
+    String phone = "";
+
+    String[] permissoes = {Manifest.permission.SEND_SMS, Manifest.permission.RECEIVE_SMS};
 
     LoginActivity loginActivity;
 
@@ -41,13 +42,15 @@ public class CodeVerify extends AppCompatActivity {
         Bundle i = getIntent().getExtras();
         loginActivity = i.getParcelable("user");
 
-        num = getIntent().getStringExtra("num");
+//        num = getIntent().getStringExtra("num");
         phone = getIntent().getStringExtra("phone");
+        gerarNumero();
 
 
         edCode = findViewById(R.id.editTextNumber);
         btnConfirm = findViewById(R.id.btnConfirm);
         txtResend = findViewById(R.id.txtResendCode);
+
 
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,34 +58,39 @@ public class CodeVerify extends AppCompatActivity {
                 if (edCode.getText().toString().isEmpty()) {
                     Toast.makeText(CodeVerify.this, "Preencha o campo de codigo", Toast.LENGTH_SHORT).show();
                 } else {
-                    if (edCode.getText().toString().equals(num)) {
-                        Toast.makeText(CodeVerify.this, "Codigo correto", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(CodeVerify.this, ChangePassword.class);
-                        startActivity(intent);
-                    } else {
+                    if (edCode.getText().toString().equals(numRev)) {
                         Toast.makeText(CodeVerify.this, "Codigo não é igual ao enviado.", Toast.LENGTH_SHORT).show();
+                    } else {
+                       concluido();
                     }
                 }
-
             }
         });
-
         txtResend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gerarNumero();
-                SmsManager smsManager = SmsManager.getDefault();
-                smsManager.sendTextMessage(phone, null,"Codigo: " + numRev.toString(), null,null);
-                Toast.makeText(CodeVerify.this, "Código enviado novamente: "+ phone, Toast.LENGTH_SHORT).show();
+
+                if (numRev.length() == 5) {
+                    Toast.makeText(CodeVerify.this, "Código enviado novamente para " + phone, Toast.LENGTH_SHORT).show(); //Ta puxando esse Toast
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(phone, null, "Codigo: " + numRev.toString(), null, null);
+                }
             }
         });
-
     }
 
-    private void gerarNumero() {
+    public void gerarNumero() {
         Random smsCodigo = new Random();
         for (int i = 0; i < 5; i++) {
-            numRev.append(smsCodigo.nextInt(9));
+            numRev.append(smsCodigo.nextInt(9));//numeros de 1 a 9
         }
+        Toast.makeText(CodeVerify.this, "Código enviado para " + phone, Toast.LENGTH_SHORT).show(); //Ta puxando esse Toast
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage(phone, null, "Codigo: " + numRev.toString(), null, null);
+    }
+
+    public void concluido(){
+        Intent intent = new Intent(this, ChangePassword.class);
+        startActivity(intent);
     }
 }

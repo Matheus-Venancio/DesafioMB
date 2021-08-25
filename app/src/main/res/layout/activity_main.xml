@@ -6,13 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FUNCIONOU"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="24dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.161"
+        app:srcCompat="@mipmap/ic_eventfacul"
+        tools:srcCompat="@mipmap/ic_eventfacul_round" />
+
+    <TextView
+        android:id="@+id/txtEvent2"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="260dp"
+        android:background="#070707"
+        android:elegantTextHeight="false"
+        android:freezesText="false"
+        android:text="TESTE 2"
+        android:textColor="#FAF6F6"
+        android:textColorLink="#C31919"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:autoSizeTextType="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtEvent"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="452dp"
+        android:background="#070707"
+        android:elegantTextHeight="false"
+        android:freezesText="false"
+        android:text="FESTA DO CALOURO Á FANTASIA   10 DE MAIO  AS  21H         CENTRO DE EVENTOS DO LAGO    "
+        android:textColor="#FAF6F6"
+        android:textColorLink="#C31919"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:autoSizeTextType="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

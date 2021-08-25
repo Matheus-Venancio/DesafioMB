@@ -7,4 +7,11 @@
     <string name="hintPassword">Senha</string>
     <string name="txtConta">Ainda não tem uma conta? Então toque aqui</string>
     <string name="txtReenviarCod">Não recebeu o codigo? clique aqui!</string>
+    <string name="hintNewPassword">Nova senha</string>
+    <string name="hintConfirmPassword">Digite novamente</string>
+    <string name="btnChange">Alterar</string>
+    <string name="txtPrimeiroLote">PRIMEIRO LOTE</string>
+    <string name="txtIngresso">INGRESSO</string>
+    <string name="txtRS">R$</string>
+    <string name="btnPurchase">Comprar</string>
 </resources>

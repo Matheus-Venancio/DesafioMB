@@ -33,12 +33,14 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    StringBuilder num = new StringBuilder();
+//    StringBuilder num = new StringBuilder();
 
     SharedPreferences sharedPreferences;
     private static final String SHARED_PREF_NAME = "mypref";
     private static final String KEY_EMAIL = "email";
     private static final String KEY_SENHA = "senha";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,39 +113,39 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public void onEntrar(View view){
+    public void onEntrar(View view) {
         verificarLogin();
 
         DocumentReference emailRef = db.collection("users").document(edtEmail.getText().toString());
 
         emailRef.get().addOnCompleteListener(task -> {
-            DocumentSnapshot document =task.getResult();
-            if (document.exists()){
+            DocumentSnapshot document = task.getResult();
+            if (document.exists()) {
                 String userEmail = document.getId();
-                if (userEmail.equals(edtEmail.getText().toString())){
+                if (userEmail.equals(edtEmail.getText().toString())) {
                     String Senha = document.getString("password");
-                    if (Senha.equals(edtPassword.getText().toString())){
+                    if (Senha.equals(edtPassword.getText().toString())) {
                         Toast.makeText(LoginActivity.this, "Entrando...", Toast.LENGTH_SHORT).show();
-                        if (checkPersistence.isChecked()){
+                        if (checkPersistence.isChecked()) {
                             SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString(KEY_EMAIL,edtEmail.getText().toString());
-                            editor.putString(KEY_SENHA,edtPassword.getText().toString());
+                            editor.putString(KEY_EMAIL, edtEmail.getText().toString());
+                            editor.putString(KEY_SENHA, edtPassword.getText().toString());
                             editor.apply();
                             Toast.makeText(this, "Login correto", Toast.LENGTH_SHORT).show();
                         }
-                        Intent intent = new Intent(this,MainActivity.class);
+                        Intent intent = new Intent(this, MainActivity.class);
                         startActivity(intent);
-                    }else{
+                    } else {
                         Toast.makeText(LoginActivity.this, "Usuario não encontrado", Toast.LENGTH_SHORT).show();
                     }
-                }else{
+                } else {
                     Toast.makeText(LoginActivity.this, "Usuario não encontrado", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
-    public void onEsqueceu(View view){
+    public void onEsqueceu(View view) {
         if (edtEmail.getText().toString().equals("")){//Conferindo se esta vazio
             edtEmail.setError("Preencha o campo Email");
         }else{
@@ -157,18 +159,13 @@ public class LoginActivity extends AppCompatActivity {
                         if (userEmai.equals(edtEmail.getText().toString())) {
                             String phone = document.getString("phone");//Pega o telefone no banco
 
-                            randomCodig();
+//                            randomCodig();
 
-                            //Enviando Sms
-                            SmsManager smsManager = SmsManager.getDefault();
-                            smsManager.sendTextMessage(phone, null, "Codigo: " + num.toString(), null, null);
-                            Toast.makeText(LoginActivity.this, "Sms enviado", Toast.LENGTH_SHORT).show();
-
-                            Intent intent = new Intent(LoginActivity.this, CodeVerify.class);
+                            Intent intent = new Intent(LoginActivity.this, ChangePassword.class);
                             //Enviando os dados para outra activity
                             intent.putExtra("fieldEmail", userEmai);
                             intent.putExtra("phone", phone);
-                            intent.putExtra("num", num.toString());
+//                            intent.putExtra("num", num.toString());
                             startActivity(intent);
                         } else {
                             Toast.makeText(LoginActivity.this, "Email não encontrado", Toast.LENGTH_SHORT).show();
@@ -181,13 +178,11 @@ public class LoginActivity extends AppCompatActivity {
             });
         }
     }
-
-    //gera o codigo que será enviado como SMS
-    private void randomCodig() {
-        Random smsCodigo = new Random();
-        for (int i=0; i<5; i++){
-            num.append(smsCodigo.nextInt(9));//numeros de 1 a 9
-        }
-    }
-
+//
+//    public void randomCodig() {
+//        Random smsCodigo = new Random();
+//        for (int i=0; i<5; i++){
+//            num.append(smsCodigo.nextInt(9));//numeros de 1 a 9
+//        }
+//    }
 }

@@ -2,7 +2,7 @@ package com.example.desafiomb
 
 class People {
 
-    var name:String = ""
+    var name: String = ""
     var email: String = ""
     var cpf: String = ""
     var phone: String = ""
@@ -16,12 +16,16 @@ class People {
         this.password = password
     }
 
+    constructor(phone:String){
+        this.phone = phone
+    }
 
-    fun peopleClass(){
+
+    fun peopleClass() {
 
     }
 
-    fun peopleClass(cpf: String, password: String){
+    fun peopleClass(phone: String, email: String) {
 
     }
 

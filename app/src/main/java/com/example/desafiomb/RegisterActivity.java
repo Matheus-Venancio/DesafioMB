@@ -67,8 +67,14 @@ public class RegisterActivity extends AppCompatActivity {
                                         edCpf.getText().toString().length() != 14 ||
                                         edPassword.getText().toString().length() < 5
                                 ) {
+                                    People people = new People(edName.getText().toString(),
+                                            edEmail.getText().toString(),
+                                            edCpf.getText().toString(),
+                                            edPhone.getText().toString(),
+                                            edPassword.getText().toString());
                                     Toast.makeText(RegisterActivity.this, "Cadastrado com sucesso", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                    intent.putExtra("user", String.valueOf(people));
                                     startActivity(intent);
                                 }
                             }
@@ -168,4 +174,5 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
     }
+
 }

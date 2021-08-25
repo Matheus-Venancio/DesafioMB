@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesafioMB">
         <activity
+            android:name=".Purchase"
+            android:exported="true" />
+        <activity
+            android:name=".ExampleItem"
+            android:exported="true" />
+        <activity
             android:name=".ChangePassword"
             android:exported="true" />
         <activity
