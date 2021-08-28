@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        permissaoSMS();
+//        permissaoSMS();
 
         //Tirando a barrinha do app
         getSupportActionBar().hide();
@@ -78,21 +78,21 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void permissaoSMS() {
-        if (ContextCompat.checkSelfPermission(
-                this, Manifest.permission.RECEIVE_SMS) !=
-                PackageManager.PERMISSION_GRANTED) {
-            //Se a permissão de RECEIVE_SMS" ainda não tiver liberad, exibe a caixa pro usuario escolher sim ou nao
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECEIVE_SMS}, 10);
-        }
-
-        if (ContextCompat.checkSelfPermission(
-                this, Manifest.permission.SEND_SMS) !=
-                PackageManager.PERMISSION_GRANTED) {
-            //Se a permissão de RECEIVE_SMS" ainda não tiver liberad, exibe a caixa pro usuario escolher sim ou nao
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 30);
-        }
-    }
+//    private void permissaoSMS() {
+//        if (ContextCompat.checkSelfPermission(
+//                this, Manifest.permission.RECEIVE_SMS) !=
+//                PackageManager.PERMISSION_GRANTED) {
+//            //Se a permissão de RECEIVE_SMS" ainda não tiver liberad, exibe a caixa pro usuario escolher sim ou nao
+//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECEIVE_SMS}, 10);
+//        }
+//
+//        if (ContextCompat.checkSelfPermission(
+//                this, Manifest.permission.SEND_SMS) !=
+//                PackageManager.PERMISSION_GRANTED) {
+//            //Se a permissão de RECEIVE_SMS" ainda não tiver liberad, exibe a caixa pro usuario escolher sim ou nao
+//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 30);
+//        }
+//    }
 
 
     public void verificarLogin() {
@@ -161,11 +161,11 @@ public class LoginActivity extends AppCompatActivity {
 
 //                            randomCodig();
 
-                            Intent intent = new Intent(LoginActivity.this, ChangePassword.class);
+
+                            Intent intent = new Intent(getApplicationContext(), ChangePassword.class);
                             //Enviando os dados para outra activity
                             intent.putExtra("fieldEmail", userEmai);
                             intent.putExtra("phone", phone);
-//                            intent.putExtra("num", num.toString());
                             startActivity(intent);
                         } else {
                             Toast.makeText(LoginActivity.this, "Email não encontrado", Toast.LENGTH_SHORT).show();

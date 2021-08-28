@@ -1,62 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp"
+    android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginBottom="24dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161"
-        app:srcCompat="@mipmap/ic_eventfacul"
-        tools:srcCompat="@mipmap/ic_eventfacul_round" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_layout"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/txtEvent2"
-        android:layout_width="411dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="260dp"
-        android:background="#070707"
-        android:elegantTextHeight="false"
-        android:freezesText="false"
-        android:text="TESTE 2"
-        android:textColor="#FAF6F6"
-        android:textColorLink="#C31919"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:autoSizeTextType="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <!--            app:layout_constraint_toTopOf="parent"-->
 
-    <TextView
-        android:id="@+id/txtEvent"
-        android:layout_width="411dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="452dp"
-        android:background="#070707"
-        android:elegantTextHeight="false"
-        android:freezesText="false"
-        android:text="FESTA DO CALOURO Á FANTASIA   10 DE MAIO  AS  21H         CENTRO DE EVENTOS DO LAGO    "
-        android:textColor="#FAF6F6"
-        android:textColorLink="#C31919"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:autoSizeTextType="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="316dp"
+            android:layout_height="322dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.033"
+            app:srcCompat="@mipmap/ic_festacalouro_foreground" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="316dp"
+            android:layout_height="322dp"
+            app:layout_constraintEnd_toEndOf="@+id/txtEventFaculTwo"
+            app:layout_constraintStart_toStartOf="@+id/txtEventFaculTwo"
+            app:layout_constraintTop_toBottomOf="@+id/txtEventFaculTwo"
+            app:srcCompat="@mipmap/ic_jornadaacademica_foreground" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="316dp"
+            android:layout_height="322dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/txtEventFaculThree"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="@+id/txtEventFaculThree"
+            app:layout_constraintTop_toTopOf="@+id/txtEventFaculThree"
+            app:srcCompat="@mipmap/ic_businesscoference_foreground" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="316dp"
+            android:layout_height="322dp"
+
+            app:layout_constraintEnd_toEndOf="@+id/txtEventEmpOne"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="@+id/txtEventEmpOne"
+            app:layout_constraintTop_toBottomOf="@+id/txtEventEmpOne"
+            app:srcCompat="@mipmap/ic_expobusiness_foreground" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="316dp"
+            android:layout_height="302dp"
+            app:layout_constraintEnd_toEndOf="@+id/txtEvent"
+            app:layout_constraintStart_toStartOf="@+id/txtEvent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEvent"
+            app:srcCompat="@mipmap/ic_mostracultural_foreground" />
+
+        <TextView
+            android:id="@+id/txtEventFaculTwo"
+            android:layout_width="411dp"
+            android:layout_height="50dp"
+            android:background="#070707"
+            android:elegantTextHeight="false"
+            android:freezesText="false"
+            android:text="MOSTRA CULTURAL  CENEX/FALE  25 DE MAIO  AS  10H      UNIVERSIDADE DE LETRAS UFMG"
+            android:textColor="#FAF6F6"
+            android:textColorLink="#C31919"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:autoSizeTextType="none"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txtEventFaculThree"
+            android:layout_width="411dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="#070707"
+            android:elegantTextHeight="false"
+            android:freezesText="false"
+            android:text="JORNADA ACADEMICA  05 DE JULHO  AS  18H      ONLINE"
+            android:textColor="#FAF6F6"
+            android:textColorLink="#C31919"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:autoSizeTextType="none"
+            app:layout_constraintEnd_toEndOf="@+id/imageView5"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txtEventEmpOne"
+            android:layout_width="411dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:background="#070707"
+            android:elegantTextHeight="false"
+            android:freezesText="false"
+            android:text="BUSINESS COFERENCE 15 DE JANEIRO  AS  18H      ONLINE"
+            android:textColor="#FAF6F6"
+            android:textColorLink="#C31919"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:autoSizeTextType="none"
+            app:layout_constraintEnd_toEndOf="@+id/imageView6"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txtEventEmpTwo"
+            android:layout_width="411dp"
+            android:layout_height="50dp"
+            android:background="#070707"
+            android:elegantTextHeight="false"
+            android:freezesText="false"
+            android:text="EXPO BUSINESS  27 DE AGOSTO  AS  11H      ONLINE"
+            android:textColor="#FAF6F6"
+            android:textColorLink="#C31919"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:autoSizeTextType="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView7"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txtEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="#070707"
+            android:elegantTextHeight="false"
+            android:freezesText="false"
+            android:text="FESTA DO CALOURO Á FANTASIA   10 DE MAIO  AS  21H         CENTRO DE EVENTOS DO LAGO    "
+            android:textColor="#FAF6F6"
+            android:textColorLink="#C31919"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:autoSizeTextType="none"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

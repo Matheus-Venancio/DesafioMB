@@ -17,7 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesafioMB">
         <activity
-            android:name=".Purchase"
+            android:name=".Compra"
+            android:exported="true" />
+        <activity
+            android:name=".AccountJava"
             android:exported="true" />
         <activity
             android:name=".ExampleItem"

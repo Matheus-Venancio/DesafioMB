@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FBCA37"
     tools:context=".RegisterActivity">
 
     <EditText
@@ -42,6 +43,8 @@
         android:ems="10"
         android:hint="@string/hintCpf"
         android:inputType="number"
+        android:maxEms="11"
+        android:maxLength="11"
         app:layout_constraintEnd_toEndOf="@+id/edtEmail"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/edtEmail"
@@ -55,6 +58,8 @@
         android:ems="10"
         android:hint="@string/hintPhone"
         android:inputType="phone"
+        android:maxEms="11"
+        android:maxLength="11"
         app:layout_constraintEnd_toEndOf="@+id/edtCpf"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/edtCpf"
@@ -84,4 +89,16 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/edtPassword"
         app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CRIE UMA CONTA"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

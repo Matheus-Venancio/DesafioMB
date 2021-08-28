@@ -162,7 +162,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void verificarRegister() {
 
-        if (edPassword.getText().toString().length() < 9) {
+        if (edPassword.getText().toString().length() < 2) {
             edPassword.setError("Insira uma senha com mais de 8 caracteres");
             edPassword.requestFocus();
             return;
