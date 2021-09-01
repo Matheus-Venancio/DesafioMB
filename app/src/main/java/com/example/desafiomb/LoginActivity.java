@@ -40,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
     private static final String KEY_EMAIL = "email";
     private static final String KEY_SENHA = "senha";
 
+    String phone;
+
 
 
     @Override
@@ -76,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 
 //    private void permissaoSMS() {
@@ -90,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
 //                this, Manifest.permission.SEND_SMS) !=
 //                PackageManager.PERMISSION_GRANTED) {
 //            //Se a permissão de RECEIVE_SMS" ainda não tiver liberad, exibe a caixa pro usuario escolher sim ou nao
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 30);
+//           ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 30);
 //        }
 //    }
 
@@ -157,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (document.exists()) {
                         String userEmai = document.getId();//Transforma como id
                         if (userEmai.equals(edtEmail.getText().toString())) {
-                            String phone = document.getString("phone");//Pega o telefone no banco
+                            phone = document.getString("phone");//Pega o telefone no banco
 
 //                            randomCodig();
 

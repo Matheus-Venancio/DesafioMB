@@ -3,6 +3,7 @@ package com.example.desafiomb;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.media.app.NotificationCompat;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.app.NotificationManager;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -21,7 +23,7 @@ import com.google.api.Context;
 public class Compra extends AppCompatActivity {
 
     TextView txtValor, txtResult, txtNameEvent;
-    Button btnOne, btnTwo, btnThree, btnFour, btnPurchaseCom, btnConfirm, btnCancel;
+    Button btnOne, btnTwo, btnThree, btnFour, btnPurchaseCom;
 
     Double valorTwo;
 
